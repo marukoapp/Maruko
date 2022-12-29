@@ -77,3 +77,19 @@ const run = useCallback(async () => {
   `);
 }, []);
 ```
+
+## $useState (Hooks) / $setState
+
+```javascript
+function MyApp() {
+  const count = $useState("count", 0);
+  return (
+    <View>
+      <Text>{count}</Text>
+      <Button title="Increment" onPress={() => {
+        $setState({ count: count + 1 });
+      }}/>
+    </View>
+  );
+}
+```
