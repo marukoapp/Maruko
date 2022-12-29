@@ -20,5 +20,10 @@ const uri = await $key("pg_uri");
 const doc = await $mongo("db_name", "collection_name", {
   cmd: "findOne",
   args: [{ title: "xxx" }, ...]
-})
+});
+```
+
+## $mysql
+```javascript
+const rows = await $mysql("db_name", "select * from table_name limit 20");
 ```
