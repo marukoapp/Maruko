@@ -24,11 +24,13 @@ const doc = await $mongo("db_name", "collection_name", {
 ```
 
 ## $mysql
+
 ```javascript
 const rows = await $mysql("db_name", "select * from table_name limit 20");
 ```
 
 ## $node
+
 ```javascript
 const run = useCallback(async () => {
   const result = await $node("return 6 * 7;");
@@ -61,10 +63,13 @@ const run = useCallback(async () => {
 }, []);
 
 const run = useCallback(async () => {
-  const result = await $py(`
+  const result = await $py(
+    `
     strs = ["*" for x in range(size)]
     strs
-  `, { size: 8 });
+  `,
+    { size: 8 }
+  );
 }, []);
 
 const run = useCallback(async () => {
@@ -86,10 +91,19 @@ function MyApp() {
   return (
     <View>
       <Text>{count}</Text>
-      <Button title="Increment" onPress={() => {
-        $setState({ count: count + 1 });
-      }}/>
+      <Button
+        title="Increment"
+        onPress={() => {
+          $setState({ count: count + 1 });
+        }}
+      />
     </View>
   );
 }
+```
+
+## $sql
+
+```javascript
+const rows = await $sql("db_name", "select * from table_name");
 ```
