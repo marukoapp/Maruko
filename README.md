@@ -107,3 +107,23 @@ function MyApp() {
 ```javascript
 const rows = await $sql("db_name", "select * from table_name");
 ```
+
+## $var (Node.js) / $useVar (Hooks)
+
+```javascript
+// Node.js
+$var.person = {
+  name: "dx",
+  age: 16,
+};
+
+// React Native
+function MyApp() {
+  const man = $useVar("person");
+  return (
+    <View>
+      <Text>{man.name}</Text>
+    </View>
+  );
+}
+```
