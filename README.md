@@ -46,3 +46,9 @@ const run = useCallback(async () => {
   `);
 }, []);
 ```
+
+## $pg
+
+```javascript
+const rows = await $pg("db_name", "select * from table_name");
+```
