@@ -27,3 +27,22 @@ const doc = await $mongo("db_name", "collection_name", {
 ```javascript
 const rows = await $mysql("db_name", "select * from table_name limit 20");
 ```
+
+## $node
+```javascript
+const run = useCallback(async () => {
+  const result = await $node("return 6 * 7;");
+}, []);
+
+const run = useCallback(async () => {
+  const result = await $node("return a * a;", { a: 9 });
+}, []);
+
+const run = useCallback(async () => {
+  const result = await $node(`
+    const { networkInterfaces } = require("os");
+    const nets = networkInterfaces();
+    return nets.en0;
+  `);
+}, []);
+```
