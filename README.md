@@ -1,5 +1,19 @@
 # Maruko
 
+## $app
+
+```javascript
+// Access information about the running app.
+$app: {
+  id: string,
+  tintColor: string,
+  paths: {
+    DOCUMENTS: string,
+    JSON: string
+  }
+}
+```
+
 ## $file
 
 ```javascript
