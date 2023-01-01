@@ -20,16 +20,16 @@ $app: {
 ```javascript
 // React Native & Node.js
 const appDocumentsFolder = $file();
-const uri = $file("file.txt");
-const uri = $file("folder/file.png");
+const uri = $file("filename.txt");
+const uri = $file("folder/filename.png");
 ```
 
 ## $json
 
 ```javascript
-// React Native
-const data = await $json("file");
-const data = await $json("folder/file");
+// React Native & Node.js
+const data = await $json("filename"); // or filename.json
+const data = await $json("folder/filename");
 ```
 
 ## $key
