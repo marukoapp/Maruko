@@ -40,6 +40,19 @@ await $key.set("pg_uri", "postgres://user:password@localhost:5432/postgres");
 const uri = await $key("pg_uri");
 ```
 
+## $log
+
+```javascript
+// React Native
+$log("success");
+$log("Network", {
+  url: "https://xxx.com/upload",
+  filename: "foo.pdf",
+  success: true
+});
+$log(new Error("something wrong"));
+```
+
 ## $mongo
 
 ```javascript
