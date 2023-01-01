@@ -1,10 +1,19 @@
 # Maruko
 
+## $file
+
+```javascript
+// React Native & Node.js
+const appDocumentsFolder = $file();
+const uri = $file("file.txt");
+const uri = $file("folder/file.png");
+```
+
 ## $json
 
 ```javascript
-const data = await $json("filename");
-const data = await $json("folder/filename");
+const data = await $json("file");
+const data = await $json("folder/file");
 ```
 
 ## $key
