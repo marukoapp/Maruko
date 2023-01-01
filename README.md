@@ -4,6 +4,7 @@
 
 ```javascript
 // Access information about the running app.
+// React Native & Node.js
 $app: {
   id: string,
   tintColor: string,
@@ -26,6 +27,7 @@ const uri = $file("folder/file.png");
 ## $json
 
 ```javascript
+// React Native
 const data = await $json("file");
 const data = await $json("folder/file");
 ```
@@ -33,6 +35,7 @@ const data = await $json("folder/file");
 ## $key
 
 ```javascript
+// React Native
 await $key.set("pg_uri", "postgres://user:password@localhost:5432/postgres");
 const uri = await $key("pg_uri");
 ```
@@ -40,6 +43,7 @@ const uri = await $key("pg_uri");
 ## $mongo
 
 ```javascript
+// React Native
 const doc = await $mongo("db_name", "collection_name", {
   cmd: "findOne",
   args: [{ title: "xxx" }, ...]
@@ -49,12 +53,14 @@ const doc = await $mongo("db_name", "collection_name", {
 ## $mysql
 
 ```javascript
+// React Native
 const rows = await $mysql("db_name", "select * from table_name limit 20");
 ```
 
 ## $node
 
 ```javascript
+// React Native
 const run = useCallback(async () => {
   const result = await $node("return 6 * 7;");
 }, []);
@@ -75,12 +81,14 @@ const run = useCallback(async () => {
 ## $pg
 
 ```javascript
+// React Native
 const rows = await $pg("db_name", "select * from table_name");
 ```
 
 ## $py / $pip
 
 ```javascript
+// React Native
 const run = useCallback(async () => {
   const result = await $py("3 * 7");
 }, []);
@@ -109,6 +117,7 @@ const run = useCallback(async () => {
 ## $useState (Hooks) / $setState
 
 ```javascript
+// React Native
 function MyApp() {
   const count = $useState("count", 0);
   return (
@@ -128,10 +137,11 @@ function MyApp() {
 ## $sql
 
 ```javascript
+// React Native
 const rows = await $sql("db_name", "select * from table_name");
 ```
 
-## $var (Node.js) / $useVar (Hooks)
+## $var / $useVar
 
 ```javascript
 // Node.js
@@ -140,7 +150,7 @@ $var.person = {
   age: 16,
 };
 
-// React Native
+// React Native (Hooks)
 function MyApp() {
   const man = $useVar("person");
   return (
