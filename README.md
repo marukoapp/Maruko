@@ -1,15 +1,5 @@
 # Maruko
 
-## $alert
-
-```javascript
-$alert("message");
-$alert({
-  title: "title",
-  message: "message"
-});
-```
-
 ## $app
 
 ```javascript
@@ -23,6 +13,16 @@ $app: {
     JSON: string
   }
 }
+```
+
+## $alert
+
+```javascript
+$alert("message");
+$alert({
+  title: "title",
+  message: "message"
+});
 ```
 
 ## $file
