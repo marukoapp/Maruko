@@ -53,7 +53,7 @@ const uri = await $key("pg_uri");
 ## $log
 
 ```javascript
-// React Native
+// React Native & Node.js
 $log("success");
 $log("Network", {
   url: "https://xxx.com/upload",
