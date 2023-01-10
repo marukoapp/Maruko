@@ -149,6 +149,7 @@ function MyApp() {
       <Button
         title="Increment"
         onPress={() => {
+          // $setState("count", count + 1);
           $setState({ count: count + 1 });
         }}
       />
