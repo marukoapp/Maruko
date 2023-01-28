@@ -42,12 +42,12 @@ const data = await $json("filename"); // or filename.json
 const data = await $json("folder/filename");
 ```
 
-## $key
+## $keychain
 
 ```javascript
 // React Native
-await $key.set("pg_uri", "postgres://user:password@localhost:5432/postgres");
-const uri = await $key("pg_uri");
+await $keychain.set("pg_uri", "postgres://user:password@localhost:5432/postgres");
+const uri = await $keychain("pg_uri");
 ```
 
 ## $log
