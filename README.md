@@ -7,8 +7,8 @@
 // React Native & Node.js
 $app: {
   id: string,
-  tintColor: string,
-  paths: {
+  color: string,
+  path: {
     DOCUMENTS: string,
     JSON: string
   }
