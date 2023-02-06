@@ -1,4 +1,6 @@
-# Maruko
+# Maruko - Write Personal App
+
+## Next App, Do It Yourself.
 
 Maruko lets you write React Native applications on your phone. And with a powerful interface, you can connect to a database, read data, and then render it in React Native. app also provides file management features, a large number of built-in third-party libraries, and offers very powerful programming capabilities.
 
@@ -6,28 +8,25 @@ Maruko also enables you to call Node.js and Python code directly in React Native
 
 ## Examples
 
-### $app
+### $useState (Hooks) / $setState
 
 ```javascript
-// Access information about the running app.
-// React Native & Node.js
-$app: {
-  id: string,
-  color: string,
-  path: {
-    DOCUMENTS: string
-  }
+// React Native
+function MyApp() {
+  const count = $useState("count", 0);
+  return (
+    <View>
+      <Text>{count}</Text>
+      <Button
+        title="Increment"
+        onPress={() => {
+          // $setState("count", count + 1);
+          $setState({ count: count + 1 });
+        }}
+      />
+    </View>
+  );
 }
-```
-
-### $alert
-
-```javascript
-$alert("message");
-$alert({
-  title: "title",
-  message: "message"
-});
 ```
 
 ### $file
@@ -47,25 +46,25 @@ const data = await $json("filename"); // or filename.json
 const data = await $json("folder/filename");
 ```
 
-### $keychain
+### $sql
 
 ```javascript
 // React Native
-await $keychain.set("pg_uri", "postgres://user:password@localhost:5432/postgres");
-const uri = await $keychain("pg_uri");
+const rows = await $sql("db_name", "select * from table_name");
 ```
 
-### $log
+### $pg
 
 ```javascript
-// React Native & Node.js
-$log("success");
-$log("Network", {
-  url: "https://xxx.com/upload",
-  filename: "foo.pdf",
-  success: true
-});
-$log(new Error("something wrong"));
+// React Native
+const rows = await $pg("db_name", "select * from table_name");
+```
+
+### $mysql
+
+```javascript
+// React Native
+const rows = await $mysql("db_name", "select * from table_name limit 20");
 ```
 
 ### $mongo
@@ -76,13 +75,6 @@ const doc = await $mongo("db_name", "collection_name", {
   cmd: "findOne",
   args: [{ title: "xxx" }, ...]
 });
-```
-
-### $mysql
-
-```javascript
-// React Native
-const rows = await $mysql("db_name", "select * from table_name limit 20");
 ```
 
 ### $node
@@ -104,13 +96,6 @@ const run = useCallback(async () => {
     return nets.en0;
   `);
 }, []);
-```
-
-### $pg
-
-```javascript
-// React Native
-const rows = await $pg("db_name", "select * from table_name");
 ```
 
 ### $py / $pip
@@ -142,34 +127,6 @@ const run = useCallback(async () => {
 }, []);
 ```
 
-### $useState (Hooks) / $setState
-
-```javascript
-// React Native
-function MyApp() {
-  const count = $useState("count", 0);
-  return (
-    <View>
-      <Text>{count}</Text>
-      <Button
-        title="Increment"
-        onPress={() => {
-          // $setState("count", count + 1);
-          $setState({ count: count + 1 });
-        }}
-      />
-    </View>
-  );
-}
-```
-
-### $sql
-
-```javascript
-// React Native
-const rows = await $sql("db_name", "select * from table_name");
-```
-
 ### $var / $useVar
 
 ```javascript
@@ -187,5 +144,50 @@ function MyApp() {
       <Text>{man.name}</Text>
     </View>
   );
+}
+```
+
+### $alert
+
+```javascript
+$alert("message");
+$alert({
+  title: "title",
+  message: "message"
+});
+```
+
+### $keychain
+
+```javascript
+// React Native
+await $keychain.set("pg_uri", "postgres://user:password@localhost:5432/postgres");
+const uri = await $keychain("pg_uri");
+```
+
+### $log
+
+```javascript
+// React Native & Node.js
+$log("success");
+$log("Network", {
+  url: "https://xxx.com/upload",
+  filename: "foo.pdf",
+  success: true
+});
+$log(new Error("something wrong"));
+```
+
+### $app
+
+```javascript
+// Access information about the running app.
+// React Native & Node.js
+$app: {
+  id: string,
+  color: string,
+  path: {
+    DOCUMENTS: string
+  }
 }
 ```
