@@ -1,6 +1,12 @@
 # Maruko
 
-## $app
+Maruko lets you write React Native applications on your phone. And with a powerful interface, you can connect to a database, read data, and then render it in React Native. app also provides file management features, a large number of built-in third-party libraries, and offers very powerful programming capabilities.
+
+Maruko also enables you to call Node.js and Python code directly in React Native and render the returned results in React Native. node.js and Python include a large number of libraries that can be used out of the box.
+
+## Examples
+
+### $app
 
 ```javascript
 // Access information about the running app.
@@ -9,13 +15,12 @@ $app: {
   id: string,
   color: string,
   path: {
-    DOCUMENTS: string,
-    JSON: string
+    DOCUMENTS: string
   }
 }
 ```
 
-## $alert
+### $alert
 
 ```javascript
 $alert("message");
@@ -25,7 +30,7 @@ $alert({
 });
 ```
 
-## $file
+### $file
 
 ```javascript
 // React Native & Node.js
@@ -34,7 +39,7 @@ const uri = $file("filename.txt");
 const uri = $file("folder/filename.png");
 ```
 
-## $json
+### $json
 
 ```javascript
 // React Native & Node.js
@@ -42,7 +47,7 @@ const data = await $json("filename"); // or filename.json
 const data = await $json("folder/filename");
 ```
 
-## $keychain
+### $keychain
 
 ```javascript
 // React Native
@@ -50,7 +55,7 @@ await $keychain.set("pg_uri", "postgres://user:password@localhost:5432/postgres"
 const uri = await $keychain("pg_uri");
 ```
 
-## $log
+### $log
 
 ```javascript
 // React Native & Node.js
@@ -63,7 +68,7 @@ $log("Network", {
 $log(new Error("something wrong"));
 ```
 
-## $mongo
+### $mongo
 
 ```javascript
 // React Native
@@ -73,14 +78,14 @@ const doc = await $mongo("db_name", "collection_name", {
 });
 ```
 
-## $mysql
+### $mysql
 
 ```javascript
 // React Native
 const rows = await $mysql("db_name", "select * from table_name limit 20");
 ```
 
-## $node
+### $node
 
 ```javascript
 // React Native
@@ -101,14 +106,14 @@ const run = useCallback(async () => {
 }, []);
 ```
 
-## $pg
+### $pg
 
 ```javascript
 // React Native
 const rows = await $pg("db_name", "select * from table_name");
 ```
 
-## $py / $pip
+### $py / $pip
 
 ```javascript
 // React Native
@@ -137,7 +142,7 @@ const run = useCallback(async () => {
 }, []);
 ```
 
-## $useState (Hooks) / $setState
+### $useState (Hooks) / $setState
 
 ```javascript
 // React Native
@@ -158,14 +163,14 @@ function MyApp() {
 }
 ```
 
-## $sql
+### $sql
 
 ```javascript
 // React Native
 const rows = await $sql("db_name", "select * from table_name");
 ```
 
-## $var / $useVar
+### $var / $useVar
 
 ```javascript
 // Node.js
