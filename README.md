@@ -6,7 +6,7 @@ Maruko lets you write React Native applications on your phone. And with a powerf
 
 Maruko also enables you to call Node.js and Python code directly in React Native and render the returned results in React Native. node.js and Python include a large number of libraries that can be used out of the box.
 
-[AppStore](https://apps.apple.com/app/id1638037174) (* Coming Soon...)
+[AppStore](https://apps.apple.com/app/id1638037174)
 
 ## Examples
 
