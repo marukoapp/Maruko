@@ -1,4 +1,4 @@
-# Maruko (丸程序) - Write Personal App
+# Maruko (丸程序) - Write Personal Apps
 
 ## Next App, Do It Yourself.
 
